@@ -42,23 +42,38 @@ class User {
     const PrimaryKeyType& getPrimaryKey() const;
 
     User() { LOG_DEBUG << "User construction!"; }
+
     User(const drogon::orm::Row& row);
 
-    const uint16_t                      get_id_val() const noexcept;
-    const std::shared_ptr<uint16_t>&    get_id() const noexcept;
-    const std::string                   get_username_val() const noexcept;
+    const uint16_t get_id_val() const noexcept;
+
+    const std::shared_ptr<uint16_t>& get_id() const noexcept;
+
+    const std::string get_username_val() const noexcept;
+
     const std::shared_ptr<std::string>& get_username() const noexcept;
-    const std::string                   get_password_val() const noexcept;
+
+    const std::string get_password_val() const noexcept;
+
     const std::shared_ptr<std::string>& get_password() const noexcept;
-    const std::string                   get_email_val() const noexcept;
+
+    const std::string get_email_val() const noexcept;
+
     const std::shared_ptr<std::string>& get_email() const noexcept;
-    const std::string                   created_at() const noexcept;
-    void                                set_id(uint16_t __id) noexcept;
-    void                                set_username(const std::string& __username) noexcept;
-    void                                set_password(const std::string& __password) noexcept;
-    void                                set_email(const std::string& __email) noexcept;
-    void                                set_created_at(const trantor::Date& __date) noexcept;
-    Json::Value                         to_json() const;
+
+    const std::string created_at() const noexcept;
+
+    void set_id(uint16_t __id) noexcept;
+
+    void set_username(const std::string& __username) noexcept;
+
+    void set_password(const std::string& __password) noexcept;
+
+    void set_email(const std::string& __email) noexcept;
+
+    void set_created_at(const trantor::Date& __date) noexcept;
+
+    Json::Value to_json() const;
 
     // for some lower level shit
     std::string        sqlForInserting(bool needSelection = false) const;
